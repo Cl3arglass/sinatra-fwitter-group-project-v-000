@@ -50,7 +50,6 @@ class ApplicationController < Sinatra::Base
 	end
 
   get '/tweets' do
-    binding.pry
     if logged_in?
      erb :'tweets/tweets'
    else
