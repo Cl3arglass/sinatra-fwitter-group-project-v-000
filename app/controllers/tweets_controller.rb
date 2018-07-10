@@ -14,14 +14,15 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
+  if params["Tweet"].empty?
+    redirect "tweets/new"
+  else
    @tweet = Tweet.create(:content => params["Tweet"])
    @user = User.find_or_create_by(session["user_id"])
    @tweet.user_id = @user.id
-
    @tweet.save
-
-
    redirect("/users/#{@user.slug}")
+ end
  end
 
 end
