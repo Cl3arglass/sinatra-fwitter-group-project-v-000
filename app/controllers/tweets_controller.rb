@@ -16,13 +16,12 @@ class TweetsController < ApplicationController
   post '/tweets' do
     binding.pry
    @tweet = Tweet.create(params)
-   @song.artist = Artist.find_or_create_by(:name => params["Artist Name"])
-   @song.genre_ids = params[:genres]
-   @song.save
+  #  @song.artist = Artist.find_or_create_by(:name => params["Artist Name"])
+  #  @song.genre_ids = params[:genres]
+   @tweet.save
 
-   flash[:message] = "Successfully created song."
 
-   redirect("/songs/#{@song.slug}")
+   redirect("/users/#{@tweet.user.slug}")
  end
 
 end
