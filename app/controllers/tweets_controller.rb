@@ -16,8 +16,8 @@ class TweetsController < ApplicationController
   post '/tweets' do
     binding.pry
    @tweet = Tweet.create(params)
-  #  @song.artist = Artist.find_or_create_by(:name => params["Artist Name"])
-  #  @song.genre_ids = params[:genres]
+   @tweet.user = User.find_or_create_by(:username => params["username"])
+  
    @tweet.save
 
 
