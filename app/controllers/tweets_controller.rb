@@ -22,7 +22,7 @@ class TweetsController < ApplicationController
    @tweet.user_id = @user.id
    @tweet.save
    redirect("/users/#{@user.slug}")
- end
+  end
  end
 
 end
