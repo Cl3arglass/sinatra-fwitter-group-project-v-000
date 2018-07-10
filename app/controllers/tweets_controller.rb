@@ -16,7 +16,7 @@ class TweetsController < ApplicationController
   post '/tweets' do
     binding.pry
    @tweet = Tweet.create(params)
-   @tweet.user = User.find_or_create_by(:username => params["username"])
+   @tweet.user = User.find_or_create_by(session["user_id"])
 
    @tweet.save
 
