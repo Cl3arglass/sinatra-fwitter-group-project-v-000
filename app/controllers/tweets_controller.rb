@@ -17,7 +17,7 @@ class TweetsController < ApplicationController
     binding.pry
    @tweet = Tweet.create(params)
    @tweet.user = User.find_or_create_by(:username => params["username"])
-  
+
    @tweet.save
 
 
